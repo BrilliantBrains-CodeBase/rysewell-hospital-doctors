@@ -1,10 +1,6 @@
-import { Phone, MapPin, Clock, Award, CheckCircle, Star } from "lucide-react"
+import { Phone} from "lucide-react"
 
-const trustIndicators = [
-  { icon: Award, text: "15+ Years of Excellence", color: "text-blue-600" },
-  { icon: CheckCircle, text: "12,000+ Happy Patients", color: "text-green-600" },
-  { icon: Star, text: "4.9★ Average Rating", color: "text-yellow-600" },
-]
+
 
 const Navbar = () => {
   return (
