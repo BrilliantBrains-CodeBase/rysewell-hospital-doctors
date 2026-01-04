@@ -78,7 +78,7 @@ const AboutDoctorSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-2xl">
             {[
-              { value: "20+", label: "Years Experience" },
+              { value: "10+", label: "Years Experience" },
               { value: "10K+", label: "Patients Healed" },
               { value: "15+", label: "Countries" },
             ].map(stat => (

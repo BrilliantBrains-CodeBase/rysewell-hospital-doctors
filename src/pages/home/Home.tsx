@@ -18,7 +18,7 @@ const doctors = [
   {
     name: "Dr. Vidya Palve",
     metaurl: "doctor/dr-vidya-palve",
-    image: "/public/DrVidyaPalve.webp",
+    image: "/DrVidyaPalve.webp",
     role: "Associate Medical Director & Co-Founder",
     specialization: "Consultant Homeopath",
     experience: "10+ Years Experience",
@@ -28,7 +28,7 @@ const doctors = [
   {
     name: "Dr. Mayank Pathak",
     metaurl: "doctor/dr-mayank-pathak",
-    image: "public/doctor-mayank.webp",
+    image: "/doctor-mayank.webp",
     role: "Consultant Orthopedic Surgeon",
     specialization: "Orthopedics & Joint Replacement",
     experience: "10+ Years Experience",
@@ -203,12 +203,12 @@ const Home = () => {
                   >
                     View Profile
                   </button>
-                  <a
+                  {/* <a
                     href="tel:+917709862164"
                     className="flex-1 rounded-xl bg-[#63a8e4] py-3 text-sm font-bold text-white hover:bg-[#4a90ca] transition-all hover:scale-105 text-center"
                   >
                     Book Now
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </motion.div>

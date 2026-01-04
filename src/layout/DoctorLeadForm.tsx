@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { User, Phone, Mail, MessageSquare, ShieldCheck } from "lucide-react"
+import { useLocation, useNavigate } from "react-router-dom"
 
-const DOCTOR_LEAD_ID = "dr-vidya-palve"
 
 const DoctorLeadForm = () => {
   const [formData, setFormData] = useState({
@@ -11,33 +11,77 @@ const DoctorLeadForm = () => {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const navigate =useNavigate();
+
+  const location = useLocation()
+
+const doctorUrl =
+  window.location.origin + location.pathname
+
+const doctorSlug =
+  location.pathname.split("/").filter(Boolean).pop() || ""
+
+const doctorName = doctorSlug
+  .replace(/-/g, " ")
+  .replace(/\b\w/g, char => char.toUpperCase())
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
+    // Clear error when user starts typing
+    if (error) setError(null)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setIsSubmitting(true)
+  setError(null)
+
+  try {
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbxhKESI5ODp0LbXZF0qI-ZI8zGmA7g4ENv6sqU4maN-UnBz6Zn0s8ir_50EUJ37Ww3exA/exec"
 
     const payload = {
-      ...formData,
-      doctorLeadId: DOCTOR_LEAD_ID,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message,
+      doctorName,
+      doctorUrl,
     }
 
-    console.log("Lead submitted:", payload)
+    // ✅ FIRE-AND-FORGET (NO CORS ISSUES)
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(payload),
+    })
 
-    alert("Thank you! Our team will contact you shortly.")
-
+    // ✅ RESET FORM
     setFormData({
       name: "",
       phone: "",
       email: "",
       message: "",
     })
+
+    // ✅ REDIRECT
+    navigate("/consultation-booking-successful")
+
+  } catch (err) {
+    console.error("Error submitting form:", err)
+    setError("Something went wrong. Please try again.")
+  } finally {
+    setIsSubmitting(false)
   }
+}
+
 
   return (
     <section
@@ -113,8 +157,15 @@ const DoctorLeadForm = () => {
           </h3>
 
           <p className="text-sm text-gray-600 mb-8">
-            Fill in your details and we’ll get back to you shortly.
+            Fill in your details and we'll get back to you shortly.
           </p>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+              {error}
+            </div>
+          )}
 
           <div className="space-y-5">
 
@@ -128,7 +179,8 @@ const DoctorLeadForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Full Name"
-                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none"
+                disabled={isSubmitting}
+                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -142,7 +194,8 @@ const DoctorLeadForm = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone Number"
-                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none"
+                disabled={isSubmitting}
+                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -155,7 +208,8 @@ const DoctorLeadForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Address (optional)"
-                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none"
+                disabled={isSubmitting}
+                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -169,7 +223,8 @@ const DoctorLeadForm = () => {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Briefly describe your health concern"
-                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none resize-none"
+                disabled={isSubmitting}
+                className="w-full rounded-xl border border-gray-300 pl-11 pr-4 py-3 text-sm focus:border-[#0F4C81] focus:outline-none resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
           </div>
@@ -177,9 +232,20 @@ const DoctorLeadForm = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="mt-8 w-full rounded-xl bg-[#0F4C81] py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#09375E] transition"
+            disabled={isSubmitting}
+            className="mt-8 w-full rounded-xl bg-[#0F4C81] py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#09375E] transition disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            Book My Consultation
+            {isSubmitting ? (
+              <>
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Submitting...
+              </>
+            ) : (
+              "Book My Consultation"
+            )}
           </button>
 
           <p className="mt-4 text-xs text-gray-500 text-center">
