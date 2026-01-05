@@ -45,7 +45,7 @@ const doctorName = doctorSlug
 
   try {
     const SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbxhKESI5ODp0LbXZF0qI-ZI8zGmA7g4ENv6sqU4maN-UnBz6Zn0s8ir_50EUJ37Ww3exA/exec"
+      "https://script.google.com/macros/s/AKfycbwrH5593c9_qM14sPZyrEEjG3hyc54vrLnesuvXKHtV7emx436va1ZkmFIH_A_VnS1w/exec"
 
     const payload = {
       name: formData.name,
