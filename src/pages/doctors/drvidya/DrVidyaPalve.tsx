@@ -12,6 +12,7 @@ import TreatmentProcessSection from './components/TreatmentProcessSection'
 import FaqSection from './components/FaqSection'
 import DoctorLeadForm from '../../../layout/DoctorLeadForm'
 import HomeopathyTestimonials from './components/HomeopathyTestimonials'
+import VideoSection from "./components/VideoSection"
 
 const DrVidyaPalve = () => {
 
@@ -68,6 +69,7 @@ const DrVidyaPalve = () => {
       <HeroSection />
       <TrustHighlights />
       <AboutDoctorSection />
+      <VideoSection />
       <ServicesSection />
       <WhyChooseUsSection />
       <InternationalPatientsSection />
