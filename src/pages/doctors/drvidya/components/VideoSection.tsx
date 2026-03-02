@@ -1,24 +1,47 @@
 import { useState, useRef, useEffect } from "react";
 import type React from "react";
 
+interface VideoSectionProps {
+  videoUrl?: string;
+  thumbnailUrl?: string;
+  title?: string;
+  subtitle?: string;
+}
+
 const VideoSection = ({
-  videoUrl = "https://youtu.be/FHTsQmDtmMU",
+  videoUrl = "https://www.youtube.com/watch?v=FHTsQmDtmMU",
   thumbnailUrl = "/thumbnail.png",
   title = "Experience the Vision",
-  subtitle = "Expirience the healing journey with Dr. Vidya Palve through this exclusive video insight into her clinic and patient care approach.",
-}) => {
+  subtitle = "Experience the healing journey with Dr. Vidya Palve through this exclusive video insight into her clinic and patient care approach.",
+}: VideoSectionProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Extract YouTube video ID from various URL formats
+  const getYouTubeId = (url: string): string | null => {
+    const match = url.match(
+      /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+    );
+    return match ? match[1] : null;
+  };
+
+  const youtubeId = getYouTubeId(videoUrl);
+  const isYouTube = !!youtubeId;
+  const embedUrl = youtubeId
+    ? `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`
+    : null;
 
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+      const progress = Math.max(
+        0,
+        Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height))
+      );
       setScrollY(progress);
       setIsVisible(rect.top < windowHeight * 0.85);
     };
@@ -27,11 +50,6 @@ const VideoSection = ({
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-    setTimeout(() => videoRef.current?.play(), 50);
-  };
 
   const parallaxOffset = (scrollY - 0.5) * -60;
 
@@ -90,17 +108,15 @@ const VideoSection = ({
           letter-spacing: -0.02em;
         }
 
-        .vs-title em {
-          font-style: normal;
-          color: #111;
-        }
-
         .vs-subtitle {
           font-size: 15px;
           color: #666;
           letter-spacing: 0.01em;
           margin-top: 10px;
           font-weight: 400;
+          max-width: 680px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .vs-frame {
@@ -108,8 +124,7 @@ const VideoSection = ({
           width: 100%;
           aspect-ratio: 16/9;
           overflow: hidden;
-          border-radius: 4px;
-          cursor: pointer;
+          border-radius: 12px;
           opacity: 0;
           transform: translateY(50px) scale(0.97);
           transition: opacity 1.1s ease 0.2s, transform 1.1s ease 0.2s;
@@ -117,31 +132,31 @@ const VideoSection = ({
             0 0 0 1px rgba(0,0,0,0.08),
             0 20px 60px rgba(0,0,0,0.12),
             0 4px 12px rgba(0,0,0,0.08);
+          cursor: pointer;
         }
         .vs-frame.visible {
           opacity: 1;
           transform: translateY(0) scale(1);
+        }
+        .vs-frame.playing {
+          cursor: default;
         }
 
         .vs-thumbnail {
           position: absolute;
           inset: 0;
           width: 100%;
-          height: 100%;
+          height: 110%;
+          top: -5%;
           object-fit: cover;
-          transform: translateY(var(--parallax));
           transition: transform 0.1s linear;
-          filter: brightness(0.75);
+          filter: brightness(0.72);
         }
 
         .vs-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            to bottom,
-            transparent 30%,
-            rgba(0,0,0,0.5) 100%
-          );
+          background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.45) 100%);
           pointer-events: none;
         }
 
@@ -153,43 +168,55 @@ const VideoSection = ({
           width: 80px;
           height: 80px;
           border-radius: 50%;
-          border: 1.5px solid rgba(255,255,255,0.8);
-          background: rgba(0,0,0,0.4);
+          border: 2px solid rgba(255,255,255,0.85);
+          background: rgba(0,0,0,0.35);
           backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.25s ease;
+          z-index: 2;
         }
         .vs-play-btn:hover {
           background: rgba(0,0,0,0.6);
           border-color: #fff;
-          transform: translate(-50%, -50%) scale(1.08);
+          transform: translate(-50%, -50%) scale(1.1);
         }
 
         .vs-play-icon {
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 12px 0 12px 22px;
+          border-width: 13px 0 13px 24px;
           border-color: transparent transparent transparent #ffffff;
-          margin-left: 4px;
+          margin-left: 5px;
         }
 
         .vs-pulse {
           position: absolute;
-          inset: -12px;
+          inset: -14px;
           border-radius: 50%;
-          border: 1px solid rgba(255,255,255,0.4);
-          animation: pulse 2.5s ease-out infinite;
+          border: 1.5px solid rgba(255,255,255,0.35);
+          animation: vs-pulse-anim 2.5s ease-out infinite;
+          pointer-events: none;
         }
-        @keyframes pulse {
-          0% { transform: scale(1); opacity: 0.7; }
-          100% { transform: scale(1.5); opacity: 0; }
+        @keyframes vs-pulse-anim {
+          0%   { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(1.6); opacity: 0; }
         }
 
-        .vs-video-el {
+        .vs-iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          background: #000;
+        }
+
+        .vs-native-video {
           position: absolute;
           inset: 0;
           width: 100%;
@@ -197,29 +224,6 @@ const VideoSection = ({
           object-fit: cover;
           background: #000;
         }
-
-        .vs-duration-badge {
-          position: absolute;
-          bottom: 20px;
-          right: 20px;
-          font-size: 11px;
-          letter-spacing: 0.12em;
-          color: rgba(255,255,255,0.7);
-          font-weight: 400;
-        }
-
-        .vs-corner {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          border-color: rgba(0,0,0,0.2);
-          border-style: solid;
-          pointer-events: none;
-        }
-        .vs-corner-tl { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
-        .vs-corner-tr { top: -1px; right: -1px; border-width: 1px 1px 0 0; }
-        .vs-corner-bl { bottom: -1px; left: -1px; border-width: 0 0 1px 1px; }
-        .vs-corner-br { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
 
         .vs-meta {
           display: flex;
@@ -247,50 +251,59 @@ const VideoSection = ({
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background: #ccc;
+          background: #ddd;
         }
       `}</style>
 
       <div className="vs-root" ref={sectionRef}>
         <div className="vs-wrapper">
+
           {/* Header */}
           <div className={`vs-header ${isVisible ? "visible" : ""}`}>
             <p className="vs-eyebrow">Featured Video</p>
-            <h2 className="vs-title">
-              {title.split(" ").map((word, i) =>
-                i % 3 === 2 ? <em key={i}> {word}</em> : ` ${word}`
-              )}
-            </h2>
+            <h2 className="vs-title">{title}</h2>
             <p className="vs-subtitle">{subtitle}</p>
           </div>
 
           {/* Video Frame */}
           <div
-            className={`vs-frame ${isVisible ? "visible" : ""}`}
-            onClick={!isPlaying ? handlePlay : undefined}
+            className={`vs-frame ${isVisible ? "visible" : ""} ${isPlaying ? "playing" : ""}`}
+            onClick={!isPlaying ? () => setIsPlaying(true) : undefined}
           >
-            {/* Thumbnail with parallax */}
+            {/* Thumbnail (hidden once playing) */}
             {!isPlaying && (
               <img
                 className="vs-thumbnail"
                 src={thumbnailUrl}
                 alt="Video thumbnail"
-                style={{ ["--parallax" as string]: `${parallaxOffset}px` } as React.CSSProperties}
+                style={{
+                  transform: `translateY(${parallaxOffset}px)`,
+                }}
               />
             )}
 
-            {/* Actual video */}
-            {isPlaying && (
+            {/* YouTube iframe */}
+            {isPlaying && isYouTube && embedUrl && (
+              <iframe
+                className="vs-iframe"
+                src={embedUrl}
+                title={title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+
+            {/* Native video fallback */}
+            {isPlaying && !isYouTube && (
               <video
-                ref={videoRef}
-                className="vs-video-el"
+                className="vs-native-video"
                 src={videoUrl}
                 controls
                 autoPlay
               />
             )}
 
-            {/* Overlay & play button */}
+            {/* Overlay + play button (only before playing) */}
             {!isPlaying && (
               <>
                 <div className="vs-overlay" />
@@ -298,15 +311,8 @@ const VideoSection = ({
                   <div className="vs-pulse" />
                   <div className="vs-play-icon" />
                 </div>
-                <span className="vs-duration-badge">▶ PLAY</span>
               </>
             )}
-
-            {/* Corner accents */}
-            <div className="vs-corner vs-corner-tl" />
-            <div className="vs-corner vs-corner-tr" />
-            <div className="vs-corner vs-corner-bl" />
-            <div className="vs-corner vs-corner-br" />
           </div>
 
           {/* Meta row */}
@@ -315,6 +321,7 @@ const VideoSection = ({
             <div className="vs-meta-dot" />
             <span className="vs-meta-label">Click to Play</span>
           </div>
+
         </div>
       </div>
     </>
