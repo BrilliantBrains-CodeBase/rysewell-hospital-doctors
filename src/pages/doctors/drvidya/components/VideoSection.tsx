@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import type React from "react";
+
 
 interface VideoSectionProps {
   videoUrl?: string;
