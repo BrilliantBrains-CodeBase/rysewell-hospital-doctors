@@ -72,7 +72,7 @@ const doctorName = doctorSlug
     })
 
     // ✅ REDIRECT
-    navigate("/consultation-booking-successful")
+    navigate("/thank-you")
 
   } catch (err) {
     console.error("Error submitting form:", err)
