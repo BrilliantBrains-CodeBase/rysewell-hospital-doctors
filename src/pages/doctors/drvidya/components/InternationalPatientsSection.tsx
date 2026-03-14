@@ -1,10 +1,4 @@
 import { motion } from "framer-motion"
-import {
-  Video,
-  Globe,
-  Package,
-  RefreshCcw,
-} from "lucide-react"
 
 const countries = [
   "AE UAE",
@@ -17,36 +11,9 @@ const countries = [
   "NZ New Zealand",
 ]
 
-const steps = [
-  {
-    step: "STEP 01",
-    icon: Video,
-    title: "Book Online Consultation",
-    description:
-      "Schedule a convenient time slot for your video consultation.",
-  },
-  {
-    step: "STEP 02",
-    icon: Globe,
-    title: "Virtual Consultation",
-    description:
-      "Connect with Dr. Vidya Palve via secure video call from anywhere.",
-  },
-  {
-    step: "STEP 03",
-    icon: Package,
-    title: "Receive Treatment Plan",
-    description:
-      "Get personalized remedies with guidance on obtaining medicines.",
-  },
-  {
-    step: "STEP 04",
-    icon: RefreshCcw,
-    title: "Continuous Follow-up",
-    description:
-      "Regular check-ins to monitor progress and adjust treatment.",
-  },
-]
+// ✅ Just update these two paths with your actual images
+const STEPS_IMAGE_DESKTOP = "/Internationaldesktop.jpg"   // shown on md+ screens
+const STEPS_IMAGE_MOBILE  = "/Internationalmobile.jpg"    // shown on small screens
 
 const InternationalPatientsSection = () => {
   return (
@@ -94,38 +61,28 @@ const InternationalPatientsSection = () => {
           ))}
         </div>
 
-        {/* ================= STEPS ================= */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => {
-            const Icon = step.icon
-            return (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition"
-              >
-                <p className="text-xs font-semibold text-gray-400">
-                  {step.step}
-                </p>
+        {/* ================= STEPS IMAGE ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-16"
+        >
+          {/* Desktop image — hidden on mobile */}
+          <img
+            src={STEPS_IMAGE_DESKTOP}
+            alt="4 steps to get started: Book consultation, Virtual consultation, Receive treatment plan, Continuous follow-up"
+            className="hidden md:block w-full object-contain"
+          />
 
-                <div className="mx-auto mt-5 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0F4C81]/10 text-[#0F4C81]">
-                  <Icon size={24} strokeWidth={1.8} />
-                </div>
-
-                <h3 className="mt-6 text-lg font-semibold text-gray-900">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
-              </motion.div>
-            )
-          })}
-        </div>
+          {/* Mobile image — hidden on desktop */}
+          <img
+            src={STEPS_IMAGE_MOBILE}
+            alt="4 steps to get started: Book consultation, Virtual consultation, Receive treatment plan, Continuous follow-up"
+            className="block md:hidden w-full object-contain"
+          />
+        </motion.div>
 
       </div>
     </section>
