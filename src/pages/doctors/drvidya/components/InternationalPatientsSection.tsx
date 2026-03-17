@@ -13,7 +13,7 @@ const countries = [
 
 // ✅ Just update these two paths with your actual images
 const STEPS_IMAGE_DESKTOP = "/Internationaldesktop.jpg"   // shown on md+ screens
-const STEPS_IMAGE_MOBILE  = "/Internationalmobile.jpg"    // shown on small screens
+const STEPS_IMAGE_MOBILE  = "/Internationmobile.jpg"    // shown on small screens
 
 const InternationalPatientsSection = () => {
   return (
