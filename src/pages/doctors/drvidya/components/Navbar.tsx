@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 
 const Navbar = () => {
 
