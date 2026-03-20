@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react"
-import Navbar from '../../../layout/Navbar'
+
 import Footer from '../../../layout/Footer'
 import HeroSection from './components/HeroSection'
 import TrustHighlights from './components/TrustHighlights'
@@ -14,6 +14,7 @@ import DoctorLeadForm from '../../../layout/DoctorLeadForm'
 import HomeopathyTestimonials from './components/HomeopathyTestimonials'
 import VideoSectionV2 from "./components/VideoSectionv2"
 import YouTubeShortsSection from "./components/YouTubeShortsSection"
+import Navbar from "./components/Navbar"
 
 const DrVidyaPalve = () => {
 
