@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Amit Palve | Specialist Diabetologist &amp; Consultant Physician Pune</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0063a1",
+                        "on-primary": "#f7f9ff",
+                        "primary-container": "#3aa0f6",
+                        "on-primary-container": "#001f37",
+                        "secondary": "#556168",
+                        "surface": "#f7f9fc",
+                        "surface-container-low": "#f0f4f8",
+                        "background": "#f7f9fc",
+                        "on-background": "#2c3338",
+                        "outline": "#747c81",
+                        "error": "#a83836"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Noto Serif", "serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-background max-w-[375px] mx-auto overflow-x-hidden shadow-2xl">
+<!-- 1. TOP APP BAR (Shared Component JSON Mapping) -->
+<header class="bg-white dark:bg-slate-900 border-b border-blue-50 dark:border-slate-800 shadow-sm dark:shadow-none docked full-width top-0 h-16 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 max-w-screen-xl mx-auto h-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400" data-icon="stethoscope">stethoscope</span>
+<h1 class="text-blue-600 dark:text-blue-400 font-serif font-extrabold text-xl tracking-tight">Dr. Amit Palve</h1>
+</div>
+<a class="text-emerald-500 hover:bg-blue-50 dark:hover:bg-slate-800 p-2 rounded-full transition-transform duration-150 active:scale-95" href="https://wa.me/#">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+</div>
+</header>
+<!-- 2. HERO SECTION -->
+<section class="relative bg-gradient-to-b from-[#1a8fe3] to-[#0d5fa3] pt-12 pb-16 px-5 text-white overflow-hidden">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 mb-6">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-[11px] font-label font-semibold tracking-wide uppercase">Trusted by 1,00,000+ Patients</span>
+</div>
+<h1 class="text-[28px] leading-tight font-headline font-bold mb-3">Pune's Most Trusted Diabetologist</h1>
+<p class="text-[15px] opacity-90 font-label mb-6 leading-relaxed">Specialist in Diabetes Management, Obesity &amp; Internal Medicine. Providing evidence-based care for a healthier life.</p>
+<div class="flex items-center gap-4 mb-8 text-[13px] font-label font-medium bg-black/10 w-fit px-4 py-2 rounded-lg">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="verified">verified</span> 10+ Yrs</span>
+<span class="w-1.5 h-1.5 bg-white/30 rounded-full"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="groups">groups</span> 1L+ Patients</span>
+</div>
+<div class="space-y-3 mb-10">
+<button class="w-full h-[52px] bg-white text-[#1a8fe3] font-label font-bold rounded-lg flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                    Book Clinic Visit
+                </button>
+<button class="w-full h-[52px] border-2 border-white/40 text-white font-label font-bold rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+                    Video Consultation
+                </button>
+</div>
+<div class="relative mt-4">
+<div class="absolute -top-4 -right-2 bg-white text-[#0d5fa3] px-4 py-2 rounded-lg shadow-xl font-label font-bold text-xs flex items-center gap-1.5 z-20">
+<span class="material-symbols-outlined text-sm" data-icon="hospital" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+                    RyseWell Hospital
+                </div>
+<div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+<img class="w-full h-[300px] object-cover" data-alt="Professional portrait of Dr. Amit Palve, a confident Indian male doctor in a white coat and stethoscope smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz5HVRNGnxf8ZdTUi-tBYyN2Nrd62uiyI6wfKiFctGrjc4fMAz1DmJmo6nkc0CGLS6qPIrXf8sak1NZT9tjO_-dkAiV6puwP--07GrVqfTg8ofo40Wx6cis6MHddsH6ogjN7mNBXz4rtxnqP0hVbej3SjdjmYcZA2Z1iSCqqh2FumIqiAA0GxuFQ9xnY3WPb3yAOpK61E9JiDVRxgThOTM6mxYQuIe4i7FU-LB5Ta-aUAutfySlocEo9y_EeHGTbe0gZsUyMy3CavC"/>
+</div>
+</div>
+</div>
+<!-- Decorative bg circle -->
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+</section>
+<!-- 3. TRUST STRIP -->
+<div class="bg-white py-6 overflow-hidden border-b border-slate-100">
+<div class="flex overflow-x-auto gap-8 px-5 hide-scrollbar whitespace-nowrap items-center">
+<span class="text-slate-400 font-label font-bold text-sm tracking-widest uppercase">JEHANGIR</span>
+<span class="text-slate-400 font-label font-bold text-sm tracking-widest uppercase">MANIPAL</span>
+<span class="text-slate-400 font-label font-bold text-sm tracking-widest uppercase">SAHYADRI</span>
+<span class="text-slate-400 font-label font-bold text-sm tracking-widest uppercase">DNB</span>
+<span class="text-slate-400 font-label font-bold text-sm tracking-widest uppercase">KOTHRUD</span>
+</div>
+</div>
+<!-- 4. STATS SECTION -->
+<section class="bg-primary pt-12 pb-12 px-5">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl border border-white/10">
+<div class="text-white/70 font-label text-xs uppercase tracking-wider mb-1">Patients</div>
+<div class="text-white text-2xl font-bold font-headline">1,00,000+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl border border-white/10">
+<div class="text-white/70 font-label text-xs uppercase tracking-wider mb-1">Experience</div>
+<div class="text-white text-2xl font-bold font-headline">10+ Years</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl border border-white/10">
+<div class="text-white/70 font-label text-xs uppercase tracking-wider mb-1">Success Rate</div>
+<div class="text-white text-2xl font-bold font-headline">98%</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl border border-white/10">
+<div class="text-white/70 font-label text-xs uppercase tracking-wider mb-1">Trainings</div>
+<div class="text-white text-2xl font-bold font-headline">15+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl border border-white/10">
+<div class="text-white/70 font-label text-xs uppercase tracking-wider mb-1">Consultations</div>
+<div class="text-white text-2xl font-bold font-headline">500+ / Mo</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl border border-white/10">
+<div class="text-white/70 font-label text-xs uppercase tracking-wider mb-1">Locations</div>
+<div class="text-white text-2xl font-bold font-headline">Pune City</div>
+</div>
+</div>
+</section>
+<!-- 5. PROBLEM SECTION -->
+<section class="bg-[#f7f9fc] py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-2 relative inline-block">
+            Still Struggling With Diabetes?
+            <span class="block w-12 h-1 bg-primary mt-2"></span>
+</h2>
+<p class="text-muted-text font-label mb-8">Stop managing symptoms, start controlling the disease with specialized care.</p>
+<div class="space-y-4">
+<div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+<div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-800 mb-1">Uncontrolled Sugar</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Constant fluctuations leading to fatigue and long-term risks.</p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+<div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-800 mb-1">Fear of Complications</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Worry about kidney health, vision, and heart conditions.</p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+<div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-800 mb-1">Confusing Treatment Plans</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Too many medicines and restrictive diets without results.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. ABOUT SECTION -->
+<section class="bg-white py-12 px-5">
+<span class="text-primary font-label font-bold text-xs uppercase tracking-widest mb-2 block">MBBS · MD · DNB</span>
+<h2 class="text-2xl font-headline font-bold mb-8">The Doctor Behind 1,00,000 Recoveries</h2>
+<div class="rounded-2xl overflow-hidden mb-8 shadow-lg">
+<img class="w-full h-56 object-cover" data-alt="Doctor Amit Palve in a clinical setting reviewing patient records on a tablet with soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB1M7ShmgvOZpIERhDBORFUZ-r57l5OLDzUc4HesTawmWHtWG0y4j-I9tLqq_3g4jIeue6Db000VZrSUByqQ7JO7sCy5J4X__AHOJ5visUReuo54dv01VeB2lr_1ju-zSqORIJHuCLpgSfuY-3LkwNIa4JUOkj-Qy3CTaZwJwU0HFXmo0_1cMK4PoC8VueyTlmnNrCgsx6G2cbwC6qaeyF_iwiVYNrqauUS-zQ3K7TyhkOItF_STLrTF01yWmWijuh5DMGxCcpkS0T"/>
+</div>
+<div class="space-y-4 font-label text-slate-600 leading-relaxed text-[15px]">
+<p>Dr. Amit Palve is a distinguished Diabetologist and Consultant Physician based in Pune, dedicated to reversing the impact of diabetes on his patients' lives.</p>
+<p>With a specialization in advanced diabetology and internal medicine, he combines cutting-edge medical research with compassionate, patient-centered care.</p>
+<p>His approach focuses not just on medication, but on holistic lifestyle management to achieve long-term remission and wellness.</p>
+</div>
+<div class="mt-8 border-l-4 border-primary pl-6 py-2 italic font-headline text-lg text-slate-800">
+            "My mission is to empower patients with the right knowledge and tools to defeat diabetes, not just live with it."
+        </div>
+</section>
+<!-- 7. TREATMENTS SECTION -->
+<section class="bg-[#e8f4fd] py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-8 relative inline-block">
+            What Dr. Palve Treats
+            <span class="block w-12 h-1 bg-primary mt-2"></span>
+</h2>
+<div class="space-y-4">
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="p-5 flex justify-between items-center bg-white">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="bloodtype">bloodtype</span>
+<span class="font-bold text-slate-800">Diabetology</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="p-5 flex justify-between items-center bg-white">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="medical_services">medical_services</span>
+<span class="font-bold text-slate-800">General Medicine</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. WHY CHOOSE SECTION -->
+<section class="bg-white py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-8">Why Patients Choose Dr. Palve</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="fact_check">fact_check</span>
+<h4 class="text-sm font-bold mb-1">Accurate Diagnosis</h4>
+</div>
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="schedule">schedule</span>
+<h4 class="text-sm font-bold mb-1">Minimal Wait Time</h4>
+</div>
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="health_and_safety">health_and_safety</span>
+<h4 class="text-sm font-bold mb-1">Evidence Based</h4>
+</div>
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="handshake">handshake</span>
+<h4 class="text-sm font-bold mb-1">Personal Care</h4>
+</div>
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="payments">payments</span>
+<h4 class="text-sm font-bold mb-1">Ethical Fees</h4>
+</div>
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="location_on">location_on</span>
+<h4 class="text-sm font-bold mb-1">Prime Location</h4>
+</div>
+</div>
+</section>
+<!-- 9. HOW IT WORKS -->
+<section class="bg-[#f7f9fc] py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-10 text-center">3 Steps to Better Health</h2>
+<div class="space-y-12 relative">
+<div class="absolute left-6 top-0 bottom-0 w-0.5 bg-blue-100"></div>
+<div class="flex gap-6 relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold text-lg border-4 border-[#f7f9fc]">1</div>
+<div>
+<h3 class="font-bold text-slate-800 mb-1">Book Appointment</h3>
+<p class="text-sm text-slate-500">Pick a time that works for you via our easy online booking or call.</p>
+</div>
+</div>
+<div class="flex gap-6 relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold text-lg border-4 border-[#f7f9fc]">2</div>
+<div>
+<h3 class="font-bold text-slate-800 mb-1">Expert Consultation</h3>
+<p class="text-sm text-slate-500">In-depth analysis of your history, blood reports, and lifestyle habits.</p>
+</div>
+</div>
+<div class="flex gap-6 relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold text-lg border-4 border-[#f7f9fc]">3</div>
+<div>
+<h3 class="font-bold text-slate-800 mb-1">Live Better</h3>
+<p class="text-sm text-slate-500">Follow a customized treatment plan and enjoy a life with controlled sugar.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. VIDEO CONSULT SECTION -->
+<section class="bg-primary pt-12 pb-12 px-5 relative overflow-hidden">
+<h2 class="text-2xl font-headline font-bold mb-6 text-white leading-tight">Consult From Anywhere in India</h2>
+<div class="space-y-4 mb-10">
+<div class="flex items-center gap-3 text-white/90 font-label text-sm">
+<span class="material-symbols-outlined text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Detailed Video Session (15-20 Mins)
+            </div>
+<div class="flex items-center gap-3 text-white/90 font-label text-sm">
+<span class="material-symbols-outlined text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Digital Prescription via WhatsApp
+            </div>
+<div class="flex items-center gap-3 text-white/90 font-label text-sm">
+<span class="material-symbols-outlined text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Blood Report Review
+            </div>
+<div class="flex items-center gap-3 text-white/90 font-label text-sm">
+<span class="material-symbols-outlined text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Follow-up Support
+            </div>
+</div>
+<button class="w-full h-[52px] border-2 border-white text-white font-label font-bold rounded-lg mb-10">
+            Book Video Call
+        </button>
+<div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small thumbnail of a medical professional for a video call interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9rGjq_V9FNMi4jJvJaFkPqXcoVLQKEMXhOLaMzwjTbVFr8VbGzao2TH_58ubIr7_VlquDIAUf229XqoVHW-DVFaivei28xxAdLTxJozLW3BrEMzaZX11FFZfVQrRYacFHQ6OaW7V97tMaJrbkP4zgGuuHLTt9e6UPIC9pPoyusBu66cwjX2tQZVHzDpeWf02o6IjIjnsAVMP71Y4nWeL_vLEEHB9rB1B9BVf0Xhg_uPl62K1LbQu3S01a1KAazfXA2vW5BL3mO0Yc"/>
+</div>
+<div class="flex-1">
+<div class="w-24 h-2 bg-white/20 rounded-full mb-1.5"></div>
+<div class="w-16 h-1.5 bg-white/10 rounded-full"></div>
+</div>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xs" data-icon="call_end" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</div>
+</div>
+</div>
+<div class="aspect-video bg-black/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white/40 text-4xl" data-icon="videocam">videocam</span>
+</div>
+</div>
+</section>
+<!-- 11. YOUTUBE SHORTS SECTION -->
+<section class="bg-white py-12 px-5">
+<div class="flex justify-between items-end mb-8">
+<h2 class="text-2xl font-headline font-bold">Health Tips on YouTube</h2>
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-1">View All</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="aspect-[9/16] bg-slate-100 rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Still frame from a YouTube short video about diabetes nutrition with bright vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKCZi8wPuqqsqRfNF4E_JCg_cGGdEuNvTs0LLp6CPMK49Tvmo9LJuUqYPzyYejG2bpIwPNhODZBDLrPCK7XJhihM6pE1l-hCfOTQkxQH0MAJJzZFBLNU71yP8mwZoxdz8NLCD38NQ-GkaiySxhe3b907xMfyDXJaP9uHYZa9CSK3CdqGytH7chodbjqjm1Fh3A_ynzzH_vPPYvVqzL0VR2W_Ymso70xv195jwzVg0J57Llxx3c9R1NfMOoys_bN_G0Gx6TiooqurTG"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<div class="aspect-[9/16] bg-slate-100 rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Still frame from a YouTube short video about morning exercises for glucose control" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVSVPWpBEoqMGspRHqtH_52ItmGaJFJOoRKegeM4FVTmihNWgaubB-n6tHkFP3E5njuBIUYKMBFkbl-ZzQQyM7-_dsVRsLGFCh0KSHaln6pDid7jH8TFz6lQlakcAS2KpQkyND4n8EfvFxUABjZiOrzFOo56PSCF2rWsYPFoOsXNbLAc2LYRU5DqCVLmOUo_a-84pU1HQP2ucvjbi_VQMlMnBj-GrRHLLSgNPdG5JNSnAuTTpb6kV0havOT4o2o-_ATTUfqfZd8D2i"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<button class="w-full h-[52px] bg-red-600 text-white font-label font-bold rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="subscriptions" style="font-variation-settings: 'FILL' 1;">subscriptions</span>
+            Subscribe for Health Tips
+        </button>
+</section>
+<!-- 12. TESTIMONIALS SECTION -->
+<section class="bg-[#e8f4fd] py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-8">What Patients Say</h2>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-50">
+<div class="flex text-amber-400 mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-slate-600 italic font-body mb-6">"Dr. Palve's approach to my Type 2 Diabetes has been life-changing. My HbA1c dropped from 9.2 to 6.4 in just 4 months without extreme dieting."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold">S</div>
+<div>
+<h4 class="font-bold text-slate-800 text-sm">Suresh M.</h4>
+<p class="text-slate-400 text-xs">Pune, Patient since 2021</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 13. FAQ SECTION -->
+<section class="bg-white py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-8">Common Questions</h2>
+<div class="space-y-4">
+<div class="border-b border-slate-100 pb-4">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-slate-800 text-sm pr-4">Can diabetes be reversed?</h4>
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+</div>
+<div class="border-b border-slate-100 pb-4">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-slate-800 text-sm pr-4">How often should I check my sugar?</h4>
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+</div>
+<div class="border-b border-slate-100 pb-4">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-slate-800 text-sm pr-4">What should be my fasting sugar level?</h4>
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+</div>
+<div class="border-b border-slate-100 pb-4">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-slate-800 text-sm pr-4">Are online consultations effective?</h4>
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 14. LEAD FORM SECTION -->
+<section class="bg-[#e8f4fd] py-12 px-5">
+<h2 class="text-2xl font-headline font-bold mb-8">Book Your Appointment</h2>
+<div class="bg-white p-6 rounded-2xl shadow-xl">
+<form class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Full Name</label>
+<input class="w-full bg-slate-50 border-0 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary" placeholder="Your name" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Phone Number</label>
+<input class="w-full bg-slate-50 border-0 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary" placeholder="Mobile number" type="tel"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Consultation Type</label>
+<select class="w-full bg-slate-50 border-0 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary">
+<option>Clinic Visit (Pune)</option>
+<option>Video Consultation</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Preferred Date</label>
+<input class="w-full bg-slate-50 border-0 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary" type="date"/>
+</div>
+<button class="w-full h-[56px] bg-primary text-white font-label font-bold rounded-xl shadow-lg shadow-blue-200 mt-4 active:scale-[0.98] transition-transform" type="submit">
+                    Confirm Appointment
+                </button>
+</form>
+</div>
+</section>
+<!-- 15. FOOTER (Shared Component JSON Mapping) -->
+<footer class="bg-slate-950 text-white/60 py-12 mb-20">
+<div class="flex flex-col items-center gap-6 text-center px-8 w-full">
+<div class="text-blue-400 font-serif font-bold text-2xl">Dr. Amit Palve</div>
+<p class="text-sm">Expert Diabetologist &amp; Consultant Physician serving patients in Pune and across India via digital health.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white" href="#"><span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span></a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white" href="#"><span class="material-symbols-outlined" data-icon="play_circle">play_circle</span></a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white" href="#"><span class="material-symbols-outlined" data-icon="chat">chat</span></a>
+</div>
+<div class="w-full border-t border-white/10 pt-8 flex flex-col gap-4">
+<a class="text-slate-500 hover:text-blue-600 transition-colors duration-200 text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors duration-200 text-sm" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors duration-200 text-sm" href="#">Patient Portal</a>
+</div>
+<div class="text-[11px] font-sans text-slate-500 mt-4 uppercase tracking-widest">
+                © 2024 Dr. Amit Palve. All Rights Reserved.
+            </div>
+</div>
+</footer>
+<!-- BOTTOM NAV BAR (Shared Component JSON Mapping) -->
+<nav class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe z-50">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-xl px-3 py-1.5 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-sans text-[11px] font-medium mt-0.5">Home</span>
+</a>
+<!-- Treatments -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1.5 active:scale-90 transition-all hover:text-blue-600" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-sans text-[11px] font-medium mt-0.5">Treatments</span>
+</a>
+<!-- Call -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1.5 active:scale-90 transition-all hover:text-blue-600" href="tel:+910000000000">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+<span class="font-sans text-[11px] font-medium mt-0.5">Call</span>
+</a>
+<!-- Book (Special Active State for Action) -->
+<a class="flex flex-col items-center justify-center bg-primary text-white rounded-xl px-4 py-1.5 active:scale-90 transition-all shadow-md" href="#book">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-sans text-[11px] font-bold mt-0.5">Book</span>
+</a>
+</nav>
+</body></html>
