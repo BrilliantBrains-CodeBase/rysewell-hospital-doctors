@@ -99,34 +99,45 @@ const FinalCTA = () => {
 
   return (
     <section id="appointment-form" className="py-24 bg-[#005f9c] text-white">
-      <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
 
-        {/* Left — headline + bullets */}
-        <div className="space-y-8">
-          <h2 className="text-5xl font-bold font-headline leading-tight">
-            Ready to Reclaim Your Health Journey?
-          </h2>
-          <p className="text-xl opacity-90 font-body">
-            Join 1,00,000+ patients who have found clarity and health with Dr. Amit Palve's expertise.
-          </p>
+        {/* Left — headline + bullets + map */}
+        <div className="h-full flex flex-col gap-7">
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold font-headline leading-tight">
+              Ready to Reclaim Your Health Journey?
+            </h2>
+            <p className="text-lg md:text-xl opacity-90 font-body">
+              Join 1,00,000+ patients who have found clarity and health with Dr. Amit Palve's expertise.
+            </p>
 
-          <div className="space-y-4">
-            {[
-              { icon: "verified", text: "MBBS, MD, DNB Expert Guidance" },
-              { icon: "local_hospital", text: "Best-in-class Hospital Facility" },
-            ].map((item) => (
-              <div key={item.text} className="flex items-center gap-4 font-body">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-white">{item.icon}</span>
+            <div className="space-y-4">
+              {[
+                { icon: "verified", text: "MBBS, MD, DNB Expert Guidance" },
+                { icon: "local_hospital", text: "Best-in-class Hospital Facility" },
+              ].map((item) => (
+                <div key={item.text} className="flex items-center gap-4 font-body">
+                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-white">{item.icon}</span>
+                  </div>
+                  <span>{item.text}</span>
                 </div>
-                <span>{item.text}</span>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-3xl overflow-hidden border border-white/20 shadow-2xl flex-1 min-h-[280px]">
+            <iframe
+              src="https://maps.google.com/maps?q=RyseWell%20Multispeciality%20Hospital%20Pune&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-[280px] sm:h-[340px] lg:h-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
 
         {/* Right — inline form card */}
-        <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl text-gray-900">
+        <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl text-gray-900 h-full">
           <h3 className="text-2xl font-bold font-headline mb-8">Book Your Slot</h3>
 
           {isSuccess ? (

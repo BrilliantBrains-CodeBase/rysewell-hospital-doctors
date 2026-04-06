@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { FaWhatsapp } from "react-icons/fa"
 
@@ -17,14 +17,53 @@ import TestimonialsSection from "./components/TestimonialsSection"
 import FAQSection from "./components/FAQSection"
 import FinalCTA from "./components/FinalCTA"
 import MobileBottomNav from "./components/MobileBottomNav"
+import BookingModal from "./components/BookingModal"
+
+const AUTO_POPUP_SESSION_KEY = "dr_amit_consultation_popup_seen"
 
 const DrAmitPalve = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
+  const triggerRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" })
   }, [])
 
+  useEffect(() => {
+    const triggerElement = triggerRef.current
+
+    if (!triggerElement || sessionStorage.getItem(AUTO_POPUP_SESSION_KEY) === "true") {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return
+        }
+
+        setIsBookingModalOpen(true)
+        sessionStorage.setItem(AUTO_POPUP_SESSION_KEY, "true")
+        observer.disconnect()
+      },
+      {
+        threshold: 0.4,
+      }
+    )
+
+    observer.observe(triggerElement)
+
+    return () => observer.disconnect()
+  }, [])
+
   const scrollToInlineForm = () => {
+    sessionStorage.setItem(AUTO_POPUP_SESSION_KEY, "true")
     document.querySelector("#appointment-form")?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
+  const closeBookingModal = () => {
+    setIsBookingModalOpen(false)
+    sessionStorage.setItem(AUTO_POPUP_SESSION_KEY, "true")
   }
 
   return (
@@ -71,6 +110,9 @@ const DrAmitPalve = () => {
       {/* 7 — Treatments */}
       <TreatmentsSection />
 
+      {/* Trigger marker: after Treatments section */}
+      <div ref={triggerRef} aria-hidden="true" className="h-px w-full" />
+
       {/* 8 — Why Choose */}
       <WhyChooseSection />
 
@@ -96,18 +138,24 @@ const DrAmitPalve = () => {
       <Footer />
 
       {/* Floating WhatsApp — desktop */}
-      <a
-        href="https://wa.me/917709862164"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="hidden md:flex fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full w-14 h-14 items-center justify-center shadow-xl transition-transform hover:scale-110"
-      >
-        <FaWhatsapp className="w-7 h-7" />
-      </a>
+      <div className="hidden md:block fixed bottom-6 right-6 z-50">
+
+        <a
+          href="https://wa.me/917709862164"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl transition-transform hover:scale-110"
+        >
+          <FaWhatsapp className="w-7 h-7" />
+        </a>
+      </div>
 
       {/* Mobile Bottom Nav */}
       <MobileBottomNav onBookClick={scrollToInlineForm} />
+
+      {/* Auto popup: Book your consultation */}
+      <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
     </>
   )
 }

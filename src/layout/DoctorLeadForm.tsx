@@ -254,6 +254,28 @@ const doctorName = doctorSlug
         </motion.form>
 
       </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 pb-20 text-white">
+        <div className="mb-6">
+          <h3 className="text-2xl md:text-3xl font-bold">Visit RyseWell Multispeciality Hospital, Pune</h3>
+          <p className="mt-2 text-white/80 text-sm md:text-base">
+            Easy to reach location for in-clinic consultations.
+          </p>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d968273.3443577632!2d72.80760903125004!3d18.559707999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1007c7cd871%3A0x5787762908e1fd99!2sDr%20Palve%20Multispecialty%20Hospital%2C%20Pune%20%7C%20%231%20for%20Expert%20Doctors%20%26%20Advanced%20Diagnostics!5e0!3m2!1sen!2sin!4v1731478980821!5m2!1sen!2sin"
+            className="w-full h-[280px] sm:h-[360px] lg:h-[420px] border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
+        <p className="mt-4 text-sm text-white/85">
+          RyseWell Multispeciality Hospital, Pune · Call +91 77098 62164 for directions.
+        </p>
+      </div>
     </section>
   )
 }
