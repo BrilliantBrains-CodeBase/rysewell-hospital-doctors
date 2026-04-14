@@ -6,7 +6,7 @@ const Navbar = () => {
     "Hi, I’d like to book a consultation with Dr. Vidya Palve. Could you please share the available slots and next steps?"
   )
 
-  const whatsappLink = `https://wa.me/917709862164?text=${whatsappMessage}`
+  const whatsappLink = `https://wa.me/919096983001?text=${whatsappMessage}`
 
   const scrollToForm = () => {
     const element = document.getElementById("doctor-lead-form")

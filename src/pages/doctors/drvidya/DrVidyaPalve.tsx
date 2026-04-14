@@ -15,6 +15,7 @@ import HomeopathyTestimonials from './components/HomeopathyTestimonials'
 import VideoSectionV2 from "./components/VideoSectionv2"
 import YouTubeShortsSection from "./components/YouTubeShortsSection"
 import Navbar from "./components/Navbar"
+import VidyaGlobalWhatsAppBubble from "../../../layout/VidyaGlobalWhatsAppBubble"
 
 const DrVidyaPalve = () => {
 
@@ -80,6 +81,7 @@ const DrVidyaPalve = () => {
       <HomeopathyTestimonials />
       <FaqSection />
       <DoctorLeadForm />
+      <VidyaGlobalWhatsAppBubble />
       <Footer />
     </>
   )

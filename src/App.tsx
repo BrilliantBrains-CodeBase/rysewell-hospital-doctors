@@ -5,7 +5,7 @@ import './App.css'
 import DrVidyaPalve from "./pages/doctors/drvidya/DrVidyaPalve"
 import DrAmitPalve from "./pages/doctors/dramitpalve/DrAmitPalve"
 import ConsultationSuccess from "./layout/ConsultationSuccessBooking"
-import GlobalWhatsAppBubble from "./layout/GlobalWhatsAppBubble"
+// import GlobalWhatsAppBubble from "./layout/GlobalWhatsAppBubble"
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/thank-you" element ={<ConsultationSuccess />}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <GlobalWhatsAppBubble />
+      {/* <GlobalWhatsAppBubble /> */}
     </>
   )
 }

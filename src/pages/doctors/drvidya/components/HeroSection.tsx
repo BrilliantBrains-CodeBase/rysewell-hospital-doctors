@@ -63,12 +63,12 @@ const HeroSection = () => {
 
             {/* Secondary CTA */}
             <a
-              href="https://wa.me/917709862164"
+              href="https://wa.me/919096983001?text='Hi, I’d like to book a consultation with Dr. Vidya Palve. Could you please share the available slots and next steps?'"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-xl border border-[#0F4C81] px-8 py-3 text-sm font-semibold text-[#0F4C81] hover:bg-[#0F4C81]/5 transition"
             >
-              💬 WhatsApp Consultation
+            WhatsApp Consultation
             </a>
           </div>
         </motion.div>

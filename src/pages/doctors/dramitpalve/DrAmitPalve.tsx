@@ -18,6 +18,7 @@ import FAQSection from "./components/FAQSection"
 import FinalCTA from "./components/FinalCTA"
 import MobileBottomNav from "./components/MobileBottomNav"
 import BookingModal from "./components/BookingModal"
+import GlobalWhatsAppBubble from "../../../layout/GlobalWhatsAppBubble"
 
 const AUTO_POPUP_SESSION_KEY = "dr_amit_consultation_popup_seen"
 
@@ -133,6 +134,8 @@ const DrAmitPalve = () => {
 
       {/* 14 — Final CTA + Inline Form */}
       <FinalCTA />
+
+      <GlobalWhatsAppBubble />
 
       {/* 15 — Footer */}
       <Footer />
