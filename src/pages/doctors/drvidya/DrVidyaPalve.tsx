@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react"
 
-import Footer from '../../../layout/Footer'
 import HeroSection from './components/HeroSection'
 import TrustHighlights from './components/TrustHighlights'
 import AboutDoctorSection from './components/AboutDoctorSection'
@@ -16,6 +15,7 @@ import VideoSectionV2 from "./components/VideoSectionv2"
 import YouTubeShortsSection from "./components/YouTubeShortsSection"
 import Navbar from "./components/Navbar"
 import VidyaGlobalWhatsAppBubble from "../../../layout/VidyaGlobalWhatsAppBubble"
+import VidyaPalveFooter from "../../../layout/VidyaPalveFooter"
 
 const DrVidyaPalve = () => {
 
@@ -82,7 +82,7 @@ const DrVidyaPalve = () => {
       <FaqSection />
       <DoctorLeadForm />
       <VidyaGlobalWhatsAppBubble />
-      <Footer />
+      <VidyaPalveFooter />
     </>
   )
 }

@@ -133,14 +133,7 @@ const doctorName = doctorSlug
           </ul>
 
           {/* WhatsApp fallback */}
-          <a
-            href="https://wa.me/917709862164"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 mt-12 rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold hover:bg-white/10 transition"
-          >
-            💬 Prefer WhatsApp? Chat with us instantly
-          </a>
+         
         </motion.div>
 
         {/* ================= FORM CARD ================= */}
