@@ -11,6 +11,7 @@ import TreatmentProcessSection from './components/TreatmentProcessSection'
 import FaqSection from './components/FaqSection'
 import DoctorLeadForm from '../../../layout/DoctorLeadForm'
 import HomeopathyTestimonials from './components/HomeopathyTestimonials'
+import InstagramReelsSection from './components/InstagramReelsSection'
 import VideoSectionV2 from "./components/VideoSectionv2"
 import YouTubeShortsSection from "./components/YouTubeShortsSection"
 import Navbar from "./components/Navbar"
@@ -79,6 +80,7 @@ const DrVidyaPalve = () => {
       <TreatmentProcessSection />
       <YouTubeShortsSection />
       <HomeopathyTestimonials />
+      <InstagramReelsSection />
       <FaqSection />
       <DoctorLeadForm />
       <VidyaGlobalWhatsAppBubble />
