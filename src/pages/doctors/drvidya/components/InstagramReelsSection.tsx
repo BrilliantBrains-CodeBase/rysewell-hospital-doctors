@@ -1,9 +1,10 @@
 import { motion } from "framer-motion"
 import { Play } from "lucide-react"
 
-const reels = [
-  { id: "DV-v5UHlJTz" },
-  { id: "DXRXFWCjZoh" },
+const testimonialShorts = [
+  { id: "cYNgQBiq4aY" },
+  { id: "BWYMAiWVj4w" },
+  { id: "6kcvGuXql4I" },
 ]
 
 const InstagramReelsSection = () => {
@@ -28,27 +29,27 @@ const InstagramReelsSection = () => {
           </h2>
         </motion.div>
 
-        {/* Reels Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
-          {reels.map((reel, index) => (
+        {/* Shorts Grid — 3 columns on md+, single column on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center">
+          {testimonialShorts.map((short, index) => (
             <motion.div
-              key={reel.id}
+              key={short.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="w-full max-w-85 rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow bg-white"
+              className="w-full max-w-72 rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow bg-white"
             >
-              {/* Fixed height to contain video + Instagram UI chrome (profile bar, action bar, likes) */}
-              <iframe
-                src={`https://www.instagram.com/reel/${reel.id}/embed/`}
-                scrolling="no"
-                allowTransparency={true}
-                allowFullScreen
-                className="w-full border-0 block"
-                style={{ height: "620px" }}
-                title={`Patient testimonial reel ${index + 1}`}
-              />
+              {/* 9:16 portrait aspect ratio */}
+              <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${short.id}?rel=0&modestbranding=1`}
+                  title={`Patient testimonial ${index + 1}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
